@@ -38,6 +38,8 @@ def common_prefix(array)
     common_leading_substrings
   end
   
+  p leading_substrings.reduce(:&)
+  
   final_prefix = leading_substrings.reduce(:&).max_by { |sub_string| sub_string.size }
   
   final_prefix == nil ? '' : final_prefix 
@@ -45,7 +47,7 @@ end
 
 
 p common_prefix(["flower", "flow", "fliwht"]) == "fl"
-p common_prefix(["dog", "racecar", "car"]) == ""
-p common_prefix(["interspecies", "interstellar", "interstate"]) == "inters"
-p common_prefix(["throne", "dungeon"]) == ""
-p common_prefix(["throne", "throne"]) == "throne"
+# p common_prefix(["dog", "racecar", "car"]) == ""
+# p common_prefix(["interspecies", "interstellar", "interstate"]) == "inters"
+# p common_prefix(["throne", "dungeon"]) == ""
+# p common_prefix(["throne", "throne"]) == "throne"
